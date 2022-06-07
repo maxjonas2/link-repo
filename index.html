@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" translate="no">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script defer src="./script.js"></script>
+    <title>Must Reads</title>
+    <style>
+      body {
+        font-family: system-ui;
+      }
+
+      .container-links > a {
+        display: block;
+        width: fit-content;
+      }
+
+      span.important {
+        text-transform: uppercase;
+      }
+
+      /* Change to a:target for targeting anchor elements */
+      div:target {
+        background-color: red;
+        transition: background-color 0.5s ease;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="#cool">Go straight to links</a>
+    <h2>Welcome to links</h2>
+    <p>
+      These are just some <strong>very important</strong> links that
+      <span class="important">must</span> be read.
+    </p>
+    <div class="container-links">
+      <h4>Web Development</h4>
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures"
+        >Closures</a
+      >
+      <a
+        href="https://developer.mozilla.org/en-US/docs/Web/Performance/CSS_JavaScript_animation_performance"
+        >CSS + JavaScript Animation Performance</a
+      >
+      <a href="https://create-react-app.dev/docs/deployment/"
+        >React App Deployment</a
+      >
+      <a
+        href="https://amirdiafi.medium.com/pick-a-picture-from-your-device-and-upload-it-to-the-server-in-react-native-187cfa841fb5"
+      >
+        React Native Picture Picker - Server Upload
+      </a>
+      <a href="https://createdbycocoon.com/post/blogging-without-cms">
+        Blogging Without a CMS
+      </a>
+      <a
+        id="cool"
+        href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures"
+      >
+        Function Closures
+      </a>
+      <a
+        href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax"
+      >
+        Spread Syntax</a
+      >
+      <h4>United States Trivia / Miscellanea</h4>
+      <a href="https://en.wikipedia.org/wiki/Provincetown,_Massachusetts"
+        >Princetown, Massachusetts</a
+      >
+      <a href="https://en.wikipedia.org/wiki/Salem_witch_trials"
+        >Salem Witch Trials</a
+      >
+      <a
+        href="https://www.businessinsider.com/new-england-sayings-2015-12#live-free-or-die-14"
+        >New England Slang and Sayings</a
+      >
+      <h4>English Stuff</h4>
+      <a href="https://en.wikipedia.org/wiki/Shotgunning"
+        ><em style="font-style: normal">Shotgunning</em></a
+      >
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+        >Javascript Guide - MUST READ</a
+      >
+      <h4>Cool CSS Effects</h4>
+      <a href="./pages/pageTransitions">Page Transitions</a>
+      <h4>Web Design</h4>
+      <a href="https://brasil.uxdesign.cc/entendendo-design-system-f375bbb6f704"
+        >Design Systems</a
+      >
+      <h4>Statistics and Probability</h4>
+      <a href="https://seeing-theory.brown.edu/frequentist-inference/index.html"
+        >Seeing Theory</a
+      >
+    </div>
+  </body>
+</html>
