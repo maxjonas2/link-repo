@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Testing</title>
+    <link rel="stylesheet" href="testing.css" />
+  </head>
+  <body>
+    <template id="lorem-template">
+      <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae
+        explicabo soluta magni optio consequatur expedita facilis, eum sunt
+        voluptatibus voluptates. Lorem ipsum dolor sit amet consectetur,
+        adipisicing elit. Voluptas, illo hic? Asperiores hic deleniti
+        praesentium officiis, facere eligendi illum libero.
+      </p>
+    </template>
+    <div class="container">
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="hover-container">
+        <div class="hover">0 px</div>
+      </div>
+    </div>
+
+    <script>
+      const boxes = document.querySelectorAll(".box");
+      for (let i = 0; i < boxes.length; i++) {
+        const clonedTemplate = document
+          .querySelector("#lorem-template")
+          .content.cloneNode(true);
+        boxes[i].append(clonedTemplate);
+      }
+
+      let counter = 0;
+      let lastKnownScrollPos = 0;
+      let updating = false;
+
+      window.addEventListener("scroll", handleScroll, { passive: true });
+
+      const hover = document.querySelector(".hover");
+
+      function handleScroll(e) {
+        lastKnownScrollPos = window.scrollY;
+        if (!updating) {
+          requestAnimationFrame(updateHoverBox);
+          updating = true;
+        }
+      }
+
+      function updateHoverBox() {
+        hover.innerText = parseInt(window.scrollY) + " px";
+        setTimeout(() => {
+          Object.assign(hover.style, {
+            width: parseInt(clamp(window.scrollY, 100, 500)) + "px",
+            height: parseInt(clamp(window.scrollY, 40, 200)) + "px",
+            filter: `hue-rotate(${(window.scrollY + 360) % 360}deg)`,
+          });
+        });
+        updating = false;
+      }
+
+      function clamp(value, min, max) {
+        return value < min ? min : value > max ? max : value;
+      }
+    </script>
+  </body>
+</html>
